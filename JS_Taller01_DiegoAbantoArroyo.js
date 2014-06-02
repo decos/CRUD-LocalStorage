@@ -44,11 +44,10 @@ DeviceGroup.prototype.obtenerTodos = function(){
 
 //Eliminar
 DeviceGroup.prototype.eliminar = function(circleID){
-    lista = JSON.parse(localStorage.tbCircles);
-    for(var i in lista){
-        if(lista[i].deviceGroupID == circleID){
-            lista.splice(i, 1);
-            localStorage.setItem("tbCircles", JSON.stringify(lista));
+    for(var i in window.circles){
+        if(window.circles[i].deviceGroupID == circleID){
+            window.circles.splice(i, 1);
+            localStorage.setItem("tbCircles", JSON.stringify(window.circles));
             return alert("Eliminado");
         }
     }
